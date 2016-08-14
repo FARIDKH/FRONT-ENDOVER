@@ -3,7 +3,7 @@
 <head>
 	<title>Home</title>
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
@@ -25,13 +25,46 @@
 					<li><a href="#">FEEDBACK</a></li>
 					<li><a href="#">TEAM</a></li>
 					<li><a href="#">CONTACTS</a></li>
-					<li class="dropdown" >
-						<a  class="dropdown-toggle" data-toggle="dropdown" href="#">EXTRA <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+					<li class="dropdown extrasDrop" onmouseenter="openMenu()" onmouseleave="closeMenu()">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">EXTRA <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+						<ul class="dropdown-menu firstDrop">
+							<li class="firstMenu">HOMEPAGES <i class="fa fa-caret-right pull-right" aria-hidden="true"></i>
+								<ul class="firstinDrop">
+									<li>DEFAULT</li>
+									<li>CLICKTHROUGH</li>
+									<li>COLORED</li>
+									<li>FAST REGISTRATION</li>
+									<li>PROMO</li>
+									<li>WAITING LIST</li>
+									<li>VIDEO BACKGROUND</li>
+									<li>YOUTUBE EMBED</li>
+									<li>VIMEO EMBED</li>
+								</ul>
+							</li>
+							<li class="secondMenu">BLOG <i class="fa fa-caret-right pull-right" aria-hidden="true"></i>
+								<ul class="secondinDrop">
+									<li>LIST</li>
+									<li>POST</li>
+								</ul>
+							</li>
+							<li class="thirdMenu">ECOMMERCE <i class="fa fa-caret-right pull-right" aria-hidden="true"></i>
+								<ul class="thirdinDrop">
+									<li>PRODUCT GRID</li>
+									<li>PRODUCT LIST</li>
+									<li>PRODUCT PAGE</li>
+									<li>CART CHECKOUT</li>
+									<li>PAYMENT CONFIRMATION</li>
+								</ul>	
+							</li>
+							<li>REGISTRATION</li>
+							<li>FORMS</li>
+							<li>SHORTCODES</li>
+						</ul>
 					</li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#">LOGIN</a></li>
-					<li><a href="#">SIGN UP</a></li>
+					<li><a href="#" class="signUp">SIGN UP</a></li>
 				</ul>
 			</nav>
 		</div><!-- menu ENGDING -->
@@ -42,7 +75,7 @@
 		</div>
 		<div class="row text-center">
 			<button class="btn">
-				<i class="fa fa-shopping-cart" aria-hidden="true"></i>GET STARTED
+				<i class="fa fa-shopping-cart" aria-hidden="true"></i> GET STARTED
 			</button>
 			<button class="btn">
 				TAKE TOUR
@@ -474,6 +507,67 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="js/jquery-3.1.0.min.js"></script>
+<script src="assets/js/jquery-3.1.0.min.js"></script>
+<script>
+	
+	function openMenu(){
+		$('.dropdown-toggle')
+		.css({
+			borderTop:'3px solid #1AC6FF',
+			backgroundColor:'#332F26'
+		});
+		$('.firstDrop')
+		.slideDown(300, function() {
+			$(this)
+			.show()
+		});
+
+		$('.firstMenu').mouseenter(function() {
+			$('.firstinDrop').fadeIn('fast');
+		});
+		$('.firstMenu').mouseleave(function() {
+			$('.firstinDrop').fadeOut('fast');
+		});
+
+		$('.secondMenu').mouseenter(function() {
+			$('.secondinDrop').fadeIn('fast');
+		});
+
+		$('.secondMenu').mouseleave(function() {
+			$('.secondinDrop').fadeOut('fast');
+		});
+		$('.thirdMenu').mouseenter(function() {
+			$('.thirdinDrop').fadeIn('fast');
+		});
+		$('.thirdMenu').mouseleave(function() {
+			$('.thirdinDrop').fadeOut('fast');
+		});
+	}
+
+	function closeMenu(){
+		$('.dropdown-toggle')
+		.css({
+			borderTop:'none',
+			backgroundColor:'transparent'
+		})
+		$('.firstDrop')
+		.slideUp(300, function() {
+			$(this)
+			.hide()
+		})
+		
+	}
+</script>
 </body>
 </html>
+<script>
+$('document').ready(function(){
+
+	// var windowSize = $(window).height()
+
+	// $('#header')
+	// .css({
+	// 	height: windowSize
+	// });
+})
+</script>

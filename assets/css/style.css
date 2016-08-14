@@ -5809,5 +5809,110 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
+html, body {
+  font-family: Lato, sans-serif; }
+
+#header {
+  width: 100%;
+  height: 640px;
+  background: url("../images/background/low_poly_background.jpg") no-repeat center;
+  background-size: cover;
+  background-attachment: fixed; }
+  #header nav .active {
+    background-color: transparent !important;
+    border-bottom: 2px solid #1AC6FF; }
+  #header nav .navbar-brand a {
+    color: white;
+    font-size: 2em;
+    text-decoration: none; }
+    #header nav .navbar-brand a span {
+      color: #1AC6FF; }
+  #header nav ul li {
+    padding: 10px 0;
+    cursor: pointer; }
+    #header nav ul li a {
+      padding-left: 10px;
+      padding-right: 10px;
+      color: #F0F0F0; }
+      #header nav ul li a:hover {
+        background-color: transparent;
+        color: #1AC6FF; }
+      #header nav ul li a:active {
+        background-color: transparent !important;
+        border-bottom: 2px solid #1AC6FF; }
+    #header nav ul li a.signUp {
+      padding: 5px  20px !important;
+      position: relative;
+      top: 10px;
+      color: #1AC6FF;
+      border: 1px solid #1AC6FF;
+      border-radius: 1px; }
+  #header nav ul .dropdown {
+    position: relative; }
+  #header nav ul .firstDrop {
+    background-color: #332F26;
+    color: white;
+    width: 200px;
+    position: absolute;
+    top: 85%;
+    left: -1px; }
+    #header nav ul .firstDrop li {
+      padding: 10px 20px;
+      border-bottom: 1px solid #333326; }
+      #header nav ul .firstDrop li:hover {
+        background-color: black;
+        color: #1AC6FF; }
+  #header nav ul .firstinDrop, #header nav ul .secondinDrop, #header nav ul .thirdinDrop {
+    background-color: #332F26;
+    list-style-type: none;
+    box-shadow: 0px 0px 3px black;
+    display: none; }
+    #header nav ul .firstinDrop li, #header nav ul .secondinDrop li, #header nav ul .thirdinDrop li {
+      position: relative;
+      left: -20px;
+      color: white; }
+      #header nav ul .firstinDrop li:hover, #header nav ul .secondinDrop li:hover, #header nav ul .thirdinDrop li:hover {
+        background-color: transparent;
+        color: #1AC6FF; }
+  #header nav ul .firstinDrop {
+    position: absolute;
+    top: 0;
+    left: 100%; }
+  #header nav ul .secondinDrop {
+    position: absolute;
+    top: 17%;
+    left: 100%; }
+  #header nav ul .thirdinDrop {
+    position: absolute;
+    top: 34%;
+    left: 100%; }
+  #header nav ul .dropdown-toggle-active {
+    width: 80px;
+    border-top: 3px solid #1AC6FF;
+    background-color: #332F26 !important;
+    padding-top: -3px !important; }
+  #header .row:nth-child(2), #header .row:last-child {
+    position: relative;
+    top: 135px; }
+  #header .row:nth-child(2) h1 {
+    color: white;
+    font-size: 4em; }
+    #header .row:nth-child(2) h1 span {
+      color: #1AC6FF; }
+  #header .row:nth-child(2) h3 {
+    color: white; }
+  #header .row:last-child {
+    margin-top: 20px; }
+    #header .row:last-child button:first-child {
+      background-color: #1AC6FF;
+      padding: 10px 40px;
+      color: white;
+      word-spacing: 5px; }
+    #header .row:last-child button:last-child {
+      background-color: transparent;
+      padding: 10px 30px;
+      border: 1px solid white;
+      color: white;
+      margin-left: 10px; }
 
 /*# sourceMappingURL=style.css.map */

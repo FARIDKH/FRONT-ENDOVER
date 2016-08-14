@@ -1,1 +1,162 @@
 @import 'vendors/bootstrap';
+
+$mainColor:#1AC6FF;
+$lightgray:#F0F0F0;
+html,body{
+	font-family:Lato,sans-serif
+}
+
+
+
+// @media screen and (max-width:1140px){
+// 	.firstinDrop{
+// 		position:absolute !important;
+// 		top:0 !important;
+// 		right:100% !important;
+// 	}
+// }
+
+#header{
+	width:100%;
+	height:640px;
+	background:url('../images/background/low_poly_background.jpg') no-repeat center;
+	background-size:cover;
+	background-attachment:fixed;
+	nav{
+		.active{
+			background-color:transparent !important;
+			border-bottom:2px solid $mainColor
+		}
+		.navbar-brand{
+			a{
+				color:white;
+				font-size:2em;
+				text-decoration: none;
+				span{
+					color:$mainColor
+				}
+			}
+		}
+		ul{
+			li{
+				padding:10px 0;
+				cursor:pointer;
+				a{
+					padding-left:10px;
+					padding-right:10px;
+					color:$lightgray;
+					&:hover{
+						background-color:transparent;
+						color:$mainColor;
+					}
+					&:active{
+						background-color:transparent !important;
+						border-bottom:2px solid $mainColor
+					}
+				}
+				a.signUp{
+					padding:5px  20px !important;
+					position: relative;
+					top:10px;
+					color:$mainColor;
+					border:1px solid $mainColor;
+					border-radius: 1px;
+				}
+			}
+			.dropdown{
+				position:relative;
+			}
+			.firstDrop{
+				background-color:#332F26;
+				color:white;
+				width:200px;
+				position:absolute;
+				top:85%;
+				left:-1px;
+				li{
+					padding:10px 20px;
+					border-bottom:1px solid #333326;
+					&:hover{
+						background-color: black;
+						color: #1AC6FF
+					}
+				}
+			}
+			.firstinDrop,.secondinDrop,.thirdinDrop{
+				background-color:#332F26;
+				list-style-type:none;
+				li{
+					position:relative;
+					left:-20px;
+					color:white;
+					&:hover{
+						background-color: transparent;
+						color:$mainColor;
+					}
+				}
+				box-shadow:0px 0px 3px black;
+				display:none;
+			}
+			.firstinDrop{
+				position:absolute;
+				top:0;
+				left:100%;				
+
+			}
+
+			.secondinDrop{
+				position:absolute;
+				top:17%;
+				left:100%	
+			}
+			.thirdinDrop{
+				position:absolute;
+				top:34%;
+				left:100%;			
+			}
+			.dropdown-toggle-active{
+				width:80px;
+				border-top:3px solid #1AC6FF;
+				background-color:#332F26 !important;
+				padding-top:-3px !important;
+			}
+
+		}
+	}
+	.row{
+		&:nth-child(2) , &:last-child{
+			position: relative;
+			top:135px;
+		}
+		&:nth-child(2){
+			h1{
+				color:white;
+				font-size:4em;
+				span{
+					color:$mainColor
+				}
+			}
+			h3{
+				color:white
+			}
+		}
+		&:last-child{
+			margin-top:20px;
+			button{
+				&:first-child{
+					background-color:$mainColor;
+					padding:10px 40px;
+					color:white;
+					word-spacing: 5px;
+				}
+				&:last-child{
+					background-color:transparent;
+					padding:10px 30px;
+					border:1px solid white;
+					color:white;
+					margin-left:10px;
+				}
+			}
+		}
+	}
+}
