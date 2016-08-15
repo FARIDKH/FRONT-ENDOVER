@@ -7,12 +7,6 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-<script>
-
-</script>
-<div id="pageLoaderScreen">
-	<div class="loadIcon"></div>
-</div>
 
 <section id="header">
 	<div class="container">
@@ -185,23 +179,25 @@
 
 <section id="loremAnims" style="background-color:#F0F0F0">
 	<div class="container">
-		<div class="col-md-3">
-			<div class="row">
-				<h3>LOREM DOLOR</h3>
+		<div class="col-md-3 leftLorem">
+			<div class="row dolor1 loremActive">
+				<h4>LOREM DOLOR</h4>
 				<p>Sit amet, consectetur adipiscing elit. In hac divisione rem ipsam prorsus </p>
 			</div>
-			<div class="row">
-				<h3>LOREM DOLOR</h3>
+			<div class="row dolor2">
+				<h4>LOREM DOLOR</h4>
 				<p>Sit amet, consectetur adipiscing elit. In hac divisione rem ipsam prorsus </p>
 			</div>
-			<div class="row">
-				<h3>LOREM DOLOR</h3>
+			<div class="row dolor3">
+				<h4>LOREM DOLOR</h4>
 				<p>Sit amet, consectetur adipiscing elit. In hac divisione rem ipsam prorsus </p>
 			</div>
 		</div>
 		<div class="col-md-9">
-			<div class="row">
+			<div class="row rightLorem">
 				<img src="assets/images/features/rich_features_1.png">
+				<img src="assets/images/features/rich_features_2.png">
+				<img src="assets/images/features/rich_features_3.png">
 			</div>
 		</div>
 	</div>
@@ -542,28 +538,22 @@
 			$(this)
 			.show()
 		});
+	}
 
-		$('.firstMenu').mouseenter(function() {
-			$('.firstinDrop').fadeIn('fast');
-		});
-		$('.firstMenu').mouseleave(function() {
-			$('.firstinDrop').fadeOut('fast');
-		});
 
-		$('.secondMenu').mouseenter(function() {
-			$('.secondinDrop').fadeIn('fast');
+	function crossMenu(parentMenu,childMenu){
+		$(parentMenu).mouseenter(function() {
+			$(childMenu).fadeIn('fast');
 		});
-
-		$('.secondMenu').mouseleave(function() {
-			$('.secondinDrop').fadeOut('fast');
-		});
-		$('.thirdMenu').mouseenter(function() {
-			$('.thirdinDrop').fadeIn('fast');
-		});
-		$('.thirdMenu').mouseleave(function() {
-			$('.thirdinDrop').fadeOut('fast');
+		$(parentMenu).mouseleave(function() {
+			$(childMenu).fadeOut('fast');
 		});
 	}
+
+
+	crossMenu('.firstMenu','.firstinDrop')
+	crossMenu('.secondMenu','.secondinDrop')
+	crossMenu('.thirdMenu','.thirdinDrop')	
 
 	function closeMenu(){
 		$('.dropdown-toggle')
@@ -612,9 +602,55 @@ $(document).scroll(function() {
 	}
 
 	if(wScroll > $('#helmet').offset().top - $(window).height() / 1.5 ){
-		$('.leftHelmet , .rightHelmet').addClass('is-static')				
+		$('.leftHelmet , .rightHelmet').addClass('is-hleft-static');
 	}
+
+	if(wScroll > $('#loremAnims').offset().top - $(window).height() / 2 ){
+		// $('.rightLorem img:first').fadeIn('fast')
+		$('.rightLorem img:first').css({
+			animationPlayState: 'running'
+		});
+	}
+
+	$('#loremAnims .col-md-3 .row').click(function() {
+		$('#loremAnims .col-md-3 .row').removeClass('loremActive')
+		$(this).addClass('loremActive')
+	});
+
+
+
+
+
+
+	$('.dolor1').click(function() {
+		$('.rightLorem img:nth-child(2) , .rightLorem img:last').fadeOut('fast')
+		$('.rightLorem img:first')
+		.fadeIn('fast')
+		.css({
+			animationPlayState: 'running'
+		}); 
+	});
+
+	$('.dolor2').click(function() {
+		$('.rightLorem img:first , .rightLorem img:last').fadeOut('fast')
+		$('.rightLorem img:nth-child(2)')
+		.fadeIn('fast')
+		.css({
+			animationPlayState: 'running'
+		});
+	});
+	$('.dolor3').click(function() {
+		$('.rightLorem img:first , .rightLorem img:nth-child(2)').fadeOut('fast')
+		$('.rightLorem img:last')
+		.fadeIn('fast')
+		.css({
+			animationPlayState: 'running'
+		});
+	});
+
 })
+
+console.log('....(no error)....')
 </script>
 </body>
 </html>

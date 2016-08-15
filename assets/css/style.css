@@ -5812,6 +5812,10 @@ button.close {
 html, body {
   font-family: Lato, sans-serif; }
 
+.active {
+  color: darkgray;
+  background-color: #1AC6FF; }
+
 #header {
   width: 100%;
   height: 640px;
@@ -5918,10 +5922,6 @@ html, body {
       color: white;
       margin-left: 10px; }
 
-.active {
-  color: darkgray;
-  background-color: #1AC6FF; }
-
 #firstSeperator {
   padding: 30px 0; }
   #firstSeperator figure {
@@ -6019,8 +6019,64 @@ html, body {
         color: #1AC6FF; }
     #helmet .rightHelmet p {
       font-size: 1.1em; }
-  #helmet .is-static {
+  #helmet .is-hleft-static {
     opacity: 1;
     transform: translateX(0px); }
+
+@-webkit-keyframes stimgAnim {
+  0% {
+    opacity: 0;
+    transform: rotateX(90deg); }
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg); } }
+@-webkit-keyframes ndlrmImgAnim {
+  0% {
+    transform: perspective(1000px) translate3d(0px, 0px, -2500px) rotateY(90deg); }
+  100% {
+    transform: perspective(1000px) translate3d(0px, 0px, 0px); } }
+@-webkit-keyframes lastlrmAnim {
+  0% {
+    opacity: 0;
+    transform: translateX(700px); }
+  75% {
+    transform: translateX(-50px); }
+  100% {
+    opacity: 1;
+    transform: translateX(0px); } }
+#loremAnims {
+  overflow: hidden;
+  padding-top: 10px; }
+  #loremAnims .loremActive {
+    background-color: #1AC6FF; }
+    #loremAnims .loremActive h4, #loremAnims .loremActive p {
+      color: white !important; }
+  #loremAnims .col-md-3 .row {
+    padding: 10px;
+    border-radius: 10px 0 0 10px;
+    cursor: pointer; }
+    #loremAnims .col-md-3 .row:first-child {
+      margin-top: 100px; }
+    #loremAnims .col-md-3 .row h4 {
+      font-weight: 500;
+      color: #1AC6FF; }
+    #loremAnims .col-md-3 .row p {
+      color: gray;
+      font-size: 17px; }
+  #loremAnims .col-md-9 .rightLorem img:first-child {
+    display: none;
+    animation: stimgAnim 0.7s 1;
+    transform-origin: bottom center;
+    transform-style: preserve-3d;
+    animation-play-state: paused; }
+  #loremAnims .col-md-9 .rightLorem img:nth-child(2) {
+    display: none;
+    animation: ndlrmImgAnim 0.7s 1;
+    transform-style: preserve-3d;
+    animation-play-state: paused; }
+  #loremAnims .col-md-9 .rightLorem img:last-child {
+    display: none;
+    animation: lastlrmAnim 0.7s 1;
+    animation-play-state: paused; }
 
 /*# sourceMappingURL=style.css.map */
