@@ -7,6 +7,12 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
+<script>
+
+</script>
+<div id="pageLoaderScreen">
+	<div class="loadIcon"></div>
+</div>
 
 <section id="header">
 	<div class="container">
@@ -87,7 +93,7 @@
 
 <section id="firstSeperator" style="background-color:#F0F0F0">
 	<div class="container">
-		<div class="row col-md-offset-1">
+		<div class="row col-md-offset-1 firstSepLogos">
 			<figure class="col-md-2">
 				<img src="assets/images/logo/logo-1.png" alt="logo">
 			</figure>
@@ -111,21 +117,38 @@
 <section id="tabs">
 	<div class="container">
 		<div class="row text-center">
-				<button class="btn">FIRST TAB</button >
-				<button class="btn">SECOND TAB</button >
-				<button class="btn">THIRD TAB</button >
+				<ul class="tabL">
+					<li class="active">FIRST TAB</li>
+					<li>SECOND TAB</li>
+					<li>THIRD TAB</li>
+				</ul>
 		</div>
 		<div class="row">
-			<div class="col-md-6">
-				<img src="assets/images/features/people.jpg">
+			<div id="tab1">
+				<div class="col-md-6 left-tab1">
+					<img src="assets/images/features/people.jpg">
+				</div>
+				<div class="col-md-6 col-sm-12 col-xs-12 right-tab1">
+					<h1>FOR EVERY <span>STARTUP</span></h1>
+					<p>Lorem ipsum dolor sit atmet sit dolor greand fdanrh sdfs sit atmet sit dolor greand fdanrh sdfs</p>
+					<p>In his igitur partibus duabus nihil erat, quod Zeno commuta rest gestiret. Sed virtutem ipsam inchoavit, nihil ampliusuma. Scien tiam pollicentur, quam non erat mirum sapientiae lorem cupido patria esse cariorem. Quae qui non vident, nihilamane umquam magnum ac cognitione.</p>
+					<button class="btn">GET TEMPLATE</button>
+					<button class="btn">SEE ELEMENTS</button>
+				</div>
 			</div>
-			<div class="col-md-6 text-center">
-				<h1>FOR EVERY <span>STARTUP</span></h1>
-				<p>Lorem ipsum dolor sit atmet sit dolor greand fdanrh sdfs sit atmet sit dolor greand fdanrh sdfs</p>
-				<p>In his igitur partibus duabus nihil erat, quod Zeno commuta rest gestiret. Sed virtutem ipsam inchoavit, nihil ampliusuma. Scien tiam pollicentur, quam non erat mirum sapientiae lorem cupido patria esse cariorem. Quae qui non vident, nihilamane umquam magnum ac cognitione.</p>
-				<button class="btn">GET TEMPLATE</button>
-				<button class="btn">SEE ELEMENTS</button>
+<!-- 			<div id="tab2">
+				<div class="col-md-6 col-sm-12 col-xs-12 left-tab2">
+					<h1>NEW AGE <span>TECHNOLOGY</span></h1>
+					<h5>Lorem ipsum dolor sit atmet sit dolor greand fdanrh sdfs sit atmet sit dolor greand fdanrh sdfs</h5>
+					<p>In his igitur partibus duabus nihil erat, quod Zeno commuta rest gestiret. Sed virtutem ipsam inchoavit, nihil ampliusuma. Scien tiam pollicentur, quam non erat mirum sapientiae lorem cupido patria esse cariorem. Quae qui non vident, nihilamane umquam magnum ac cognitione.</p>
+				</div>
+				<div class="col-md-6 right-tab2">
+					<img src="assets/images/features/phone.jpg" alt="iphone">
+				</div>
 			</div>
+			<div id="tab3">
+				
+			</div> -->
 		</div>
 	</div>
 </section><hr><!-- tabs ending -->
@@ -133,28 +156,27 @@
 <section id="ageTech">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6 text-left">
+			<div class="col-md-6 text-left leftTech">
 				<h1>NEW AGE <span>TECHNOLOGY</span></h1>
-				<p>Lorem ipsum dolor sit atmet sit dolor greand fdanrh sdfs sit atmet sit dolor greand fdanrh sdfs</p>
+				<p>Lorem ipsum dolor sit atmet sit dolor greand fdanrh sdfs <br>sit atmet sit dolor greand fdanrh sdfs</p>
 				<p>In his igitur partibus duabus nihil erat, quod Zeno commuta rest gestiret. Sed virtutem ipsam inchoavit, nihil ampliusuma. Scien tiam pollicentur, quam non erat mirum sapientiae lorem cupido patria esse cariorem. Quae qui non vident, nihilamane umquam magnum ac cognitione.</p>
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-6 rightTech">
 				<img src="assets/images/features/content_image1.png" alt="macBook">
 			</div>
 		</div>
 	</div>
-	<hr>
 </section><!-- ageTech ending-->
 
 <section id="helmet">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-6 leftHelmet">
 				<img src="assets/images/features/helmet.jpg">
 			</div>
-			<div class="col-md-6 text-right">
+			<div class="col-md-6 text-right rightHelmet">
 				<h1>HANG <span>ON TO</span> YER HELMET</h1>
-				<p>Lorem ipsum dolor sit atmet sit dolor greand fdanrh sdfs sit atmet sit dolor greand fdanrh sdfs</p>
+				<p>Lorem ipsum dolor sit atmet sit dolor greand fdanrh sdfs sitbr	<br> atmet sit dolor greand fdanrh sdfs</p>
 				<p>In his igitur partibus duabus nihil erat, quod Zeno commuta rest gestiret. Sed virtutem ipsam inchoavit, nihil ampliusuma. Scien tiam pollicentur, quam non erat mirum sapientiae lorem cupido patria esse cariorem. Quae qui non vident, nihilamane umquam magnum ac cognitione.</p>
 			</div>
 		</div>
@@ -508,8 +530,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="assets/js/jquery-3.1.0.min.js"></script>
-<script>
-	
+<script>	
 	function openMenu(){
 		$('.dropdown-toggle')
 		.css({
@@ -556,18 +577,52 @@
 			.hide()
 		})
 		
+	};
+
+$(document).scroll(function() {
+	var wScroll = $(this).scrollTop();
+
+
+	if(wScroll > $('#firstSeperator').offset().top - $(window).height() / 0.3){
+		$('#firstSeperator figure').each(function(i) {
+			setTimeout(function(){
+				$('#firstSeperator figure').eq(i).addClass('is-scrolling')
+			},200 * (i + 1))
+		});
+	};
+
+
+	$('#tabs ul li').click(function() {
+		$('#tabs ul li').removeClass('active')
+		$(this)	.addClass('active');
+	});
+
+
+	$('#tab1, #tab2,#tab3').addClass('tabSlide')
+
+	if(wScroll > $('#tabs').offset().top - $(window).height() / 2){
+		$('#tab1').fadeIn()
+		$('#tabs .col-md-6').each(function() {
+			$('#tabs .col-md-6').addClass('is-floating')
+		});		
 	}
+
+	if(wScroll > $('#ageTech').offset().top - $(window).height() / 1.5 ){
+		$('.leftTech , .rightTech').addClass('is-techLeft-static')					
+	}
+
+	if(wScroll > $('#helmet').offset().top - $(window).height() / 1.5 ){
+		$('.leftHelmet , .rightHelmet').addClass('is-static')				
+	}
+})
 </script>
 </body>
 </html>
 <script>
 $('document').ready(function(){
 
-	// var windowSize = $(window).height()
+	
 
-	// $('#header')
-	// .css({
-	// 	height: windowSize
-	// });
+
 })
 </script>
