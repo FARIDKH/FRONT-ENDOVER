@@ -3,6 +3,7 @@
 <head>
 	<title>Home</title>
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
@@ -208,7 +209,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3 text-center">
-				<i class="lnr lnr-cloud-download fa-3x"></i>
+				<span class="lnr lnr-cloud-download fa-3x"></span>
 				<h4>FEATURE 1</h4>
 				<p>Sit amet, consectetur adipiscing elit. In hac divisione rem ipsam prorsus probo elegantiam desidero.</p>	
 			</div>
@@ -257,17 +258,17 @@
 	</div>
 </section><!-- features ending-->
 
-<section id="secondSeperator" style="background-color:green">
+<section id="secondSeperator">
 	<div class="container">
-		<div class="col-md-4">
+		<div class="col-md-5">
 			<h1>GET LIVE UPDATES</h1>
 			<h5>No spam promise - only latest news and prices!</h5>
 		</div>
-		<div class="col-md-8">
+		<div class="col-md-7">
 			<form>
 				<input type="text" placeholder="Your Name">
 				<input type="text" placeholder="your@email.com">
-				<input type="button" class="btn" value="SUBSCRIBE">
+				<button type="button" class="btn">SUBSCRIBE</button>
 			</form>
 		</div>
 	</div>	
@@ -620,8 +621,6 @@ $(document).scroll(function() {
 
 
 
-
-
 	$('.dolor1').click(function() {
 		$('.rightLorem img:nth-child(2) , .rightLorem img:last').fadeOut('fast')
 		$('.rightLorem img:first')
@@ -629,8 +628,7 @@ $(document).scroll(function() {
 		.css({
 			animationPlayState: 'running'
 		}); 
-	});
-
+	});	
 	$('.dolor2').click(function() {
 		$('.rightLorem img:first , .rightLorem img:last').fadeOut('fast')
 		$('.rightLorem img:nth-child(2)')
@@ -639,6 +637,7 @@ $(document).scroll(function() {
 			animationPlayState: 'running'
 		});
 	});
+	
 	$('.dolor3').click(function() {
 		$('.rightLorem img:first , .rightLorem img:nth-child(2)').fadeOut('fast')
 		$('.rightLorem img:last')
@@ -648,6 +647,17 @@ $(document).scroll(function() {
 		});
 	});
 
+	if(wScroll > $('#features').offset().top - $(window).height() / 1.5){
+		$('#features .row').css({
+			animationPlayState: 'running'
+		});
+	}	
+	
+	if(wScroll > $('#secondSeperator').offset().top - $(window).height() / 1.5){
+		$('#secondSeperator .col-md-5 , #secondSeperator .col-md-7').css({
+			animationPlayState: 'running'
+		});
+	}
 })
 
 console.log('....(no error)....')

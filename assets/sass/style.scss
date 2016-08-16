@@ -9,7 +9,9 @@ html,body{
 	color:darkgray;
 	background-color:$mainColor;
 }
-
+.show{
+	display:inline;
+}
 
 
 
@@ -342,6 +344,60 @@ html,body{
 		transform:translateX(0px)
 	}
 }
+
+@-webkit-keyframes fstFrsAnim{
+	0%{
+		opacity: 0;
+		transform: translateX(1360px)
+	}
+	85%{
+		transform: translateX(-50px)
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(0px)
+	}
+}
+@-webkit-keyframes sndFrsAnim{
+	0%{
+		transform: translateX(-1360px)
+	}
+	85%{
+		transform: translateX(50px)
+	}
+	100%{
+		transform: translateX(0px)
+	}
+}
+
+@-webkit-keyframes sndStrAnimaa{
+	0%{
+		opacity: 0;
+		transform: translateX(-700px)
+	}
+	85%{
+		transform: translateX(50px)
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(0px)
+	}
+}
+
+@-webkit-keyframes sndStrAnimbb{
+	0%{
+		opacity: 0;
+		transform: translateX(700px)
+	}
+	85%{
+		transform: translateX(-50px)
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(0px)
+	}
+}
+
 #loremAnims{
 	overflow:hidden;
 	.loremActive{
@@ -391,6 +447,77 @@ html,body{
 					animation-play-state:paused;
 				}
 			}			
+		}
+	}
+}
+
+#features{
+	padding:100px 0;
+	overflow:hidden;
+	.row{
+		&:first-child{
+			animation:fstFrsAnim 1s 1;
+			animation-play-state:paused;
+			margin-bottom:80px;
+		}
+		&:last-child{
+			animation:sndFrsAnim 1s 1;
+			animation-play-state:paused;
+		}
+	}
+	span{
+		color:$mainColor;
+	}
+	p{
+		color:gray;
+	}
+}
+
+#secondSeperator{
+	overflow:hidden;
+	padding:20px  0;
+	width:100%;
+	height:auto;
+	background:url('../images/background/low_poly_background.jpg') no-repeat center;
+	background-attachment:fixed;
+	background-size:cover;
+	.col-md-5{
+		animation:sndStrAnimaa 1s 1;
+		animation-play-state:paused;
+		h1,h5{
+			color:white;
+			text-align:center;
+			font-weight: 300;
+		}
+		h1{
+			font-size: 3em;
+		}
+	}
+	.col-md-7{	
+		animation:sndStrAnimbb 1s 1;
+		animation-play-state:paused;	
+		padding-top:30px;
+		form{
+			float:left;
+			input{
+				border:none;
+				border:0.01px solid lightgray;
+				border-left:3px solid $mainColor;
+				height: 40px;
+				&:first-child{
+					width:185px;
+				}
+				&:nth-child(2){
+					width:270px;
+				}
+			}
+		}
+		button{
+			color:white;
+			background-color:transparent;
+			border:1px solid white;
+			margin-left:15px;
+			padding:10px 40px;
 		}
 	}
 }
