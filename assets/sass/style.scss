@@ -1,6 +1,7 @@
 @import 'vendors/bootstrap';
 
 $mainColor:#1AC6FF;
+$darkMainColor:darken($mainColor,20%);
 $lightgray:#F0F0F0;
 html,body{
 	font-family:Lato,sans-serif
@@ -397,7 +398,17 @@ html,body{
 		transform: translateX(0px)
 	}
 }
-
+@-webkit-keyframes packAnim{
+	0%{
+		transform:translateY(700px)
+	}
+	85%{
+		transform:translateY(-30px)
+	}
+	100%{
+		transform:translateY(0px)
+	}
+}
 #loremAnims{
 	overflow:hidden;
 	.loremActive{
@@ -518,6 +529,112 @@ html,body{
 			border:1px solid white;
 			margin-left:15px;
 			padding:10px 40px;
+		}
+	}
+}
+
+#packages{
+	overflow:hidden;
+	animation:packAnim 1s 1;
+	animation-play-state:paused;
+	padding:60px 0;
+	.packHeader{
+		margin-bottom: 80px;
+		h1{
+			font-weight: 300;
+			span{
+				color:$mainColor;
+			}
+		}
+		p{
+			font-size:17px;
+			text-align:center;
+		}
+	}
+	.packMain{
+		.col-md-4{
+			padding-bottom:50px;
+			border:1px solid $lightgray;
+			background-color:#F8F8F8;
+			width:360px;
+			.row{
+				&:nth-child(2){
+					background-color:#F3F3F3;
+					p{
+						color:gray;
+						font-weight: 300;
+						b{
+							font-size:50px;
+						}
+						span{
+							font-size:120px;
+						}
+					}
+				}
+				&:nth-child(3){
+					padding:50px 0;
+					hr{
+						width:260px;
+					}
+				}
+				button{
+					border:1px solid gray;
+					padding:10px 60px;
+					background-color:transparent;
+				}
+			}
+			h1{
+				font-weight: 300;
+				color:gray;
+			}
+			&:nth-child(2){
+				margin:0px 30px;
+			}
+			&:nth-child(2),&:last-child{
+				transition:all  0.3s linear;
+				.row{
+					transition:all 0.3s linear;
+					&:nth-child(2){
+						background-color:#F3F3F3;
+						p{
+							color:$mainColor;
+							font-weight: 300;
+							b{
+								font-size:50px;
+							}
+							span{
+								font-size:120px;
+							}
+						}
+					}
+				}
+				button{
+					border:1px solid $mainColor;
+					color:$mainColor;	
+				}
+				&:hover{
+					background-color:$mainColor;
+					p,h1,span,b{
+						color:white !important;								
+					}
+					.row{
+						&:nth-child(2){
+							background-color:$darkMainColor;
+						}
+					}
+					button{
+						color:white;
+						background-color:$mainColor;
+						border:1px solid white;
+						transition:all 0.3s linear;
+						&:hover{
+							border:none;
+							color:$mainColor;
+							background-color:white;
+						}	
+					}					
+				}					
+			}
 		}
 	}
 }

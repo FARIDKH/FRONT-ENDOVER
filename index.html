@@ -276,57 +276,57 @@
 
 <section id="packages">
 	<div class="container">
-		<div class="row text-center">
+		<div class="row text-center packHeader">
 			<h1>PRODUCT <span>PACKAGES</span></h1>
-			<p>Lorem ipsum dolor sit atmet sit dolor greand fdanrh s dfs sit atmet sit dolor greand fdanrh sdfs</p>
+			<p>Lorem ipsum dolor sit atmet sit dolor greand fdanrh sbr	<br> dfs sit atmet sit dolor greand fdanrh sdfs</p>
 		</div>
-		<div class="row text-center">
-			<div class="col-md-4" style="border:3px solid black">
+		<div class="row text-center packMain">
+			<div class="col-md-4">
 				<div class="row">
 					<h1>INDIVIDUAL</h1>
 				</div>
 				<div class="row">
-					<p>$<span>19 PER MONTH</span></p>
+					<p><b>$</b><span>19 <br> </span>PER MONTH </p>
 				</div>
 				<div class="row">
-					<span><span>Free</span> Domain</span><br><hr>
-					<span><span>Unlimited</span> Websites</span><br><hr>
-					<span><span>Unlimited</span> Bandwidth</span><br><hr>
-					<span><span>Unlimited</span> Disk Space</span><br><hr>
+					<p><span><b>Free</b></span> Domain</p><hr>
+					<p><span><b>Unlimited</b></span> Websites</p><hr>
+					<p><span><b>Unlimited</b></span> Bandwidth</p><hr>
+					<p><span><b>Unlimited</b></span> Disk Space</p>
 				</div>
 				<div class="row">
-					<button class="btn">GET STARTED</button>
+					<button class="btn" disabled>GET STARTED</button>
 				</div>
 			</div>
-			<div class="col-md-4" style="border:3px solid black">
+			<div class="col-md-4">
 				<div class="row">
 					<h1>STUDIO</h1>
 				</div>
 				<div class="row">
-					<p>$<span>29 PER MONTH</span></p>
+					<p><b>$</b><span>29 <br> </span>SUBSCRIPTION</p>
 				</div>
 				<div class="row">
-					<span><span>Free</span> Domain</span><br><hr>
-					<span><span>Unlimited</span> Websites</span><br><hr>
-					<span><span>Unlimited</span> Bandwidth</span><br><hr>
-					<span><span>Unlimited</span> Disk Space</span><br><hr>
+					<p><span><b>Free</b></span> Domain</p><hr>
+					<p><span><b>Unlimited</b></span> Websites</p><hr>
+					<p><span><b>Unlimited</b></span> Bandwidth</p><hr>
+					<p><span><b>Unlimited</b></span> Disk Space</p>
 				</div>
 				<div class="row">
 					<button class="btn">GET STARTED</button>
 				</div>
 			</div>
-			<div class="col-md-4" style="border:3px solid black">
+			<div class="col-md-4">
 				<div class="row">
 					<h1>ENTERPRISE</h1>
 				</div>
 				<div class="row">
-					<p>$<span>49 PER MONTH</span></p>
+					<p><b>$</b><span>49<br> </span>PER MONTH</p>
 				</div>
 				<div class="row">
-					<span><span>Free</span> Domain</span><br><hr>
-					<span><span>Unlimited</span> Websites</span><br><hr>
-					<span><span>Unlimited</span> Bandwidth</span><br><hr>
-					<span><span>Unlimited</span> Disk Space</span><br><hr>
+					<p><span><b>Free</b></span> Domain</p><hr>
+					<p><span><b>Unlimited</b></span> Websites</p><hr>
+					<p><span><b>Unlimited</b></span> Bandwidth</p><hr>
+					<p><span><b>Unlimited</b></span> Disk Space</p>
 				</div>
 				<div class="row">
 					<button class="btn">GET STARTED</button>
@@ -655,6 +655,13 @@ $(document).scroll(function() {
 	
 	if(wScroll > $('#secondSeperator').offset().top - $(window).height() / 1.5){
 		$('#secondSeperator .col-md-5 , #secondSeperator .col-md-7').css({
+			animationPlayState: 'running'
+		});
+	}
+
+
+	if(wScroll > $('#packages').offset().top - $(window).height() / 0.5){
+		$('#packages').css({
 			animationPlayState: 'running'
 		});
 	}
