@@ -5873,8 +5873,7 @@ html, body {
   #header nav ul .firstinDrop, #header nav ul .secondinDrop, #header nav ul .thirdinDrop {
     background-color: #332F26;
     list-style-type: none;
-    box-shadow: 0px 0px 3px black;
-    display: none; }
+    box-shadow: 0px 0px 3px black; }
     #header nav ul .firstinDrop li, #header nav ul .secondinDrop li, #header nav ul .thirdinDrop li {
       position: relative;
       left: -20px;
@@ -5946,6 +5945,8 @@ html, body {
 
 #tabs {
   padding-top: 60px; }
+  #tabs .container-fluid {
+    overflow: hidden; }
   #tabs .row:first-child ul {
     list-style-type: none;
     margin-bottom: 50px; }
@@ -5956,25 +5957,72 @@ html, body {
       color: #F0F0F0;
       display: inline-block;
       margin-right: -5px;
-      cursor: pointer; }
+      cursor: pointer;
+      transition: all 0.6s ease; }
+      #tabs .row:first-child ul li:hover {
+        color: white;
+        background-color: #1AC6FF; }
   #tabs .row:last-child {
-    position: relative;
-    overflow: hidden; }
-    #tabs .row:last-child .tabSlide {
+    position: relative; }
+    #tabs .row:last-child .right-tab1 {
+      text-align: center; }
+    #tabs .row:last-child #tab1 {
+      display: none; }
+      #tabs .row:last-child #tab1 h1 {
+        font-weight: 300; }
+        #tabs .row:last-child #tab1 h1 span {
+          color: #1AC6FF; }
+      #tabs .row:last-child #tab1 p {
+        font-size: 1.1em;
+        margin: 30px 0; }
+      #tabs .row:last-child #tab1 button {
+        background-color: transparent;
+        color: #1AC6FF;
+        border: 1px solid #1AC6FF;
+        padding: 10px 20px;
+        margin: 50px 10px;
+        transition: all 0.2s ease-out; }
+        #tabs .row:last-child #tab1 button:hover {
+          color: white;
+          background-color: #1AC6FF; }
+      #tabs .row:last-child #tab1 .left-tab1 {
+        animation: lsttabAnim 1s 1; }
+      #tabs .row:last-child #tab1 .right-tab1 {
+        animation: rsttabAnim 1s 1; }
+    #tabs .row:last-child #tab2 {
+      display: none; }
+      #tabs .row:last-child #tab2 h1 {
+        font-weight: 300; }
+      #tabs .row:last-child #tab2 .left-tab2 {
+        text-align: center; }
+        #tabs .row:last-child #tab2 .left-tab2 span {
+          color: #1AC6FF; }
+      #tabs .row:last-child #tab2 .left-tab2 {
+        animation: lsttabAnim 1s 1; }
+      #tabs .row:last-child #tab2 .right-tab2 {
+        animation: rsttabAnim 1s 1; }
+    #tabs .row:last-child #tab3 {
       display: none;
-      transition: all 0.3s ease-in-out; }
-    #tabs .row:last-child .left-tab1, #tabs .row:last-child .left-tab2 {
-      transform: translateX(-700px); }
-    #tabs .row:last-child .right-tab1, #tabs .row:last-child .right-tab2 {
-      transform: translateX(700px);
-      text-align: center; }
-    #tabs .row:last-child .is-floating {
-      opacity: 1;
-      transform: translateX(0px);
-      transition: all 0.3s ease-in-out; }
-    #tabs .row:last-child .left-tab2 {
-      padding-top: 60px;
-      text-align: center; }
+      padding-bottom: 40px; }
+      #tabs .row:last-child #tab3 .row:first-child {
+        padding: 60px 0;
+        font-weight: 300; }
+      #tabs .row:last-child #tab3 i {
+        color: #1AC6FF;
+        font-size: 4em;
+        display: block;
+        margin-bottom: 20px; }
+      #tabs .row:last-child #tab3 span {
+        font-size: 17px; }
+      #tabs .row:last-child #tab3 p {
+        margin: 20px 0px;
+        font-weight: 300; }
+      #tabs .row:last-child #tab3 .tab3header {
+        animation: tabthrHdr 1s 1;
+        transform-style: preserve-3d; }
+      #tabs .row:last-child #tab3 .tab3main {
+        animation: tabthrMain 1s 1;
+        transform-style: preserve-3d; }
 
 #ageTech {
   padding-top: 60px; }
@@ -6026,6 +6074,42 @@ html, body {
     opacity: 1;
     transform: translateX(0px); }
 
+@-webkit-keyframes lsttabAnim {
+  0% {
+    opacity: 1;
+    transform: translateX(-700px); }
+  85% {
+    transform: translateX(50px); }
+  100% {
+    opacity: 1;
+    transform: translateX(0px); } }
+@-webkit-keyframes rsttabAnim {
+  0% {
+    opacity: 1;
+    transform: translateX(700px); }
+  85% {
+    transform: translateX(-50px); }
+  100% {
+    opacity: 1;
+    transform: translateX(0px); } }
+@-webkit-keyframes tabthrHdr {
+  0% {
+    opacity: 0;
+    transform: perspective(1000px) translate3d(0px, 0px, -500px); }
+  85% {
+    transform: perspective(1000px) translate3d(0px, 0px, 50px); }
+  100% {
+    opacity: 1;
+    transform: perspective(1000px) translate3d(0px, 0px, 0px); } }
+@-webkit-keyframes tabthrMain {
+  0% {
+    opacity: 0;
+    transform: translateY(-200px); }
+  85% {
+    transform: translateY(50px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0px); } }
 @-webkit-keyframes stimgAnim {
   0% {
     opacity: 0;
@@ -6083,10 +6167,21 @@ html, body {
     transform: translateX(0px); } }
 @-webkit-keyframes packAnim {
   0% {
-    transform: translateY(700px); }
+    opacity: 0;
+    transform: translateY(100px); }
   85% {
     transform: translateY(-30px); }
   100% {
+    opacity: 1;
+    transform: translateY(0px); } }
+@-webkit-keyframes awAnim {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px); }
+  85% {
+    transform: translateY(30px); }
+  100% {
+    opacity: 1;
     transform: translateY(0px); } }
 #loremAnims {
   overflow: hidden;
@@ -6178,7 +6273,8 @@ html, body {
       padding: 10px 40px; }
 
 #packages {
-  overflow: hidden;
+  width: 100%;
+  height: 1000px;
   animation: packAnim 1s 1;
   animation-play-state: paused;
   padding: 60px 0; }
@@ -6249,5 +6345,83 @@ html, body {
             border: none;
             color: #1AC6FF;
             background-color: white; }
+
+#awards {
+  overflow: hidden;
+  animation: awAnim 1s 1;
+  animation-play-state: paused; }
+  #awards h1 {
+    font-size: 50px;
+    font-weight: 300; }
+    #awards h1 span {
+      color: #1AC6FF; }
+  #awards img {
+    margin: 30px; }
+
+#thirdSeperator {
+  width: 100%;
+  padding: 30px 0;
+  background: url("../images/background/low_poly_background.jpg") no-repeat center;
+  background-attachment: fixed;
+  background-size: cover;
+  color: white;
+  font-weight: 300; }
+  #thirdSeperator h1 {
+    font-weight: 300;
+    font-size: 50px;
+    margin-bottom: 40px; }
+    #thirdSeperator h1 span {
+      color: #1AC6FF; }
+  #thirdSeperator .thirdSepSlider {
+    border: 1px solid darkgreen;
+    overflow: hidden;
+    position: relative; }
+  #thirdSeperator .tss-1 {
+    position: relative;
+    left: -800px; }
+  #thirdSeperator .tss-2 {
+    position: absolute;
+    left: 0;
+    top: 0; }
+  #thirdSeperator .tss-3 {
+    position: absolute;
+    right: -800px;
+    top: 0; }
+  #thirdSeperator i {
+    font-size: 30px;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #1AC6FF; }
+    #thirdSeperator i:last-child {
+      float: right; }
+  #thirdSeperator p {
+    font-size: 17px;
+    text-align: center;
+    float: left; }
+
+.clientActive {
+  border-bottom: 1px solid #1AC6FF; }
+  .clientActive p, .clientActive span span {
+    color: #1AC6FF; }
+
+#clients .col-md-9 {
+  position: relative;
+  left: 50px;
+  border-bottom: 1px solid gray; }
+#clients .col-md-4 {
+  padding: 40px; }
+  #clients .col-md-4 img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%; }
+  #clients .col-md-4 div {
+    float: left; }
+  #clients .col-md-4 div:last-child {
+    position: relative;
+    left: 15px;
+    top: 10px; }
+    #clients .col-md-4 div:last-child p {
+      padding: 0;
+      margin: 0; }
 
 /*# sourceMappingURL=style.css.map */

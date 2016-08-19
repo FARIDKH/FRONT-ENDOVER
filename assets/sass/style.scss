@@ -16,13 +16,7 @@ html,body{
 
 
 
-// @media screen and (max-width:1140px){
-// 	.firstinDrop{
-// 		position:absolute !important;
-// 		top:0 !important;
-// 		right:100% !important;
-// 	}
-// }
+
 
 #header{
 	width:100%;
@@ -104,7 +98,7 @@ html,body{
 					}
 				}
 				box-shadow:0px 0px 3px black;
-				display:none;
+				// display:none;
 			}
 			.firstinDrop{
 				position:absolute;
@@ -112,7 +106,6 @@ html,body{
 				left:100%;				
 
 			}
-
 			.secondinDrop{
 				position:absolute;
 				top:17%;
@@ -200,6 +193,9 @@ html,body{
 }
 
 #tabs{
+	.container-fluid{
+		overflow: hidden;
+	}
 	padding-top:60px;
 	.row{
 		&:first-child{
@@ -214,31 +210,106 @@ html,body{
 					display: inline-block;
 					margin-right:-5px;
 					cursor:pointer;
+					transition:all 0.6s ease;
+					&:hover{
+						color:white;
+						background-color:$mainColor;
+					}
 				}
 			}
 		}
 		&:last-child{
 			position:relative;
-			overflow: hidden;
-			.tabSlide{
+			.right-tab1{			
+				text-align:center;
+			}
+			#tab1{
 				display: none;
-				transition:all 0.3s ease-in-out;
+				h1{
+					font-weight: 300;
+					span{
+						color:$mainColor;
+					}
+				}
+				p{
+					font-size:1.1em;
+					margin:30px 0;
+				}
+				button{
+					background-color:transparent;
+					color:$mainColor;
+					border:1px solid $mainColor;
+					padding:10px 20px;
+					margin:50px 10px ;
+					transition:all 0.2s ease-out;
+					&:hover{
+						color:white;
+						background-color:$mainColor;
+					}
+				}
+
+				// animation part for tab(1)
+				.left-tab1{
+					animation:lsttabAnim 1s 1;
+				}
+				.right-tab1{
+					animation:rsttabAnim 1s 1;
+				}
+
+
 			}
-			.left-tab1,.left-tab2{
-				transform: translateX(-700px);
+			#tab2{
+				display: none;
+				h1{
+					font-weight: 300;
+				}
+				.left-tab2{
+					text-align:center;
+					span{
+						color:$mainColor;
+					}	
+				}
+				// animation part for tab(2)
+				.left-tab2{
+					animation:lsttabAnim 1s 1;
+				}
+				.right-tab2{
+					animation:rsttabAnim 1s 1;
+				}	
+
 			}
-			.right-tab1,.right-tab2{
-				transform: translateX(700px);				
-				text-align:center;
-			}
-			.is-floating{
-				opacity: 1;
-				transform:translateX(0px);
-				transition:all 0.3s ease-in-out;	
-			}
-			.left-tab2{
-				padding-top:60px;
-				text-align:center;
+			#tab3{
+				display: none;
+				padding-bottom:40px;
+				.row{
+					&:first-child{
+						padding:60px 0;
+						font-weight: 300;
+					}
+				}
+				i{
+					color:$mainColor;
+					font-size:4em;
+					display: block;
+					margin-bottom:20px;
+				}
+				span{
+					font-size:17px; 
+				}
+				p{
+					margin:20px 0px;
+					font-weight: 300;
+				}
+
+				// animation part for tab(3)
+				.tab3header{
+					animation:tabthrHdr 1s 1;
+					transform-style:preserve-3d;
+				}
+				.tab3main{
+					animation:tabthrMain 1s 1;
+					transform-style:preserve-3d;
+				}
 			}
 		}
 	}
@@ -311,7 +382,59 @@ html,body{
 		}
 }
 
+@-webkit-keyframes lsttabAnim{
+	0%{
+		opacity: 1;
+		transform:translateX(-700px)
+	}
+	85%{
+		transform:translateX(50px)
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(0px)
+	}
+}
+@-webkit-keyframes rsttabAnim{
+	0%{
+		opacity: 1;
+		transform:translateX(700px)
+	}
+	85%{
+		transform:translateX(-50px)
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(0px)
+	}
+}
+@-webkit-keyframes tabthrHdr{
+	0%{
+		opacity: 0;
+		transform:perspective(1000px) translate3d(0px,0px,-500px)
+	}
+	85%{
+		transform:perspective(1000px) translate3d(0px,0px,50px)
+	}
+	100%{
+		opacity: 1;
+		transform:perspective(1000px) translate3d(0px,0px,0px)
+	}
 
+}
+@-webkit-keyframes tabthrMain{
+	0%{
+		opacity: 0;
+		transform: translateY(-200px)
+	}
+	85%{
+		transform:translateY(50px)
+	}
+	100%{
+		opacity: 1;
+		transform: translateY(0px)
+	}
+}
 @-webkit-keyframes stimgAnim{
 	0%{
 		opacity: 0;
@@ -323,6 +446,7 @@ html,body{
 		transform: rotateX(0deg)
 	}
 }
+
 @-webkit-keyframes ndlrmImgAnim{
 	0%{
 		transform:perspective(1000px) translate3d(0px,0px,-2500px) rotateY(90deg)
@@ -359,6 +483,7 @@ html,body{
 		transform: translateX(0px)
 	}
 }
+
 @-webkit-keyframes sndFrsAnim{
 	0%{
 		transform: translateX(-1360px)
@@ -400,15 +525,32 @@ html,body{
 }
 @-webkit-keyframes packAnim{
 	0%{
-		transform:translateY(700px)
+		opacity: 0;
+		transform:translateY(100px)
 	}
 	85%{
 		transform:translateY(-30px)
 	}
 	100%{
+		opacity: 1;
 		transform:translateY(0px)
 	}
 }
+
+@-webkit-keyframes awAnim{
+	0%{
+		opacity: 0;
+		transform:translateY(-100px)
+	}
+	85%{
+		transform: translateY(30px)
+	}
+	100%{
+		opacity: 1;
+		transform:translateY(0px)
+	}
+}
+
 #loremAnims{
 	overflow:hidden;
 	.loremActive{
@@ -534,7 +676,8 @@ html,body{
 }
 
 #packages{
-	overflow:hidden;
+	width:100%;
+	height:1000px;
 	animation:packAnim 1s 1;
 	animation-play-state:paused;
 	padding:60px 0;
@@ -634,6 +777,119 @@ html,body{
 						}	
 					}					
 				}					
+			}
+		}
+	}
+}
+
+#awards{
+	overflow:hidden;
+	animation:awAnim 1s 1;
+	animation-play-state:paused;
+	h1{
+		font-size:50px;
+		font-weight: 300;	
+		span{
+			color:$mainColor
+		} 
+	}
+	img{
+		margin:30px;
+	}
+}
+
+#thirdSeperator{
+	width:100%;
+	padding:30px 0;
+	background:url('../images/background/low_poly_background.jpg') no-repeat center;
+	background-attachment:fixed;
+	background-size:cover;
+	color:white;
+	font-weight: 300;
+	h1{
+		font-weight: 300;
+		font-size:50px;
+		margin-bottom:40px;
+		span{
+			color:$mainColor;
+		}
+	}
+	.thirdSepSlider{
+		border:1px solid darkgreen;
+		overflow:hidden;
+		position:relative;
+	}
+
+	.tss-1{
+		position:relative;
+		left:-800px;
+	}
+	.tss-2{
+		position:absolute;
+		left:0;
+		top:0;
+	}
+	
+	.tss-3{
+		position:absolute;
+		right:-800px;
+		top:0;
+		
+	}
+	
+
+	i{
+		font-size:30px;
+		-webkit-text-fill-color: transparent; 
+		-webkit-text-stroke-width: 1px;
+		-webkit-text-stroke-color: $mainColor;
+		&:last-child{
+			float:right;
+		}
+	}
+	p{
+		font-size:17px;
+		text-align:center;
+		float:left;
+	}
+
+
+
+	// container sliders
+
+
+
+}
+
+.clientActive{
+	border-bottom:1px solid $mainColor;
+	p,span span{
+		color:$mainColor;
+	}
+}
+#clients{
+	.col-md-9{
+		position:relative;
+		left:50px;
+		border-bottom:1px solid gray;
+	}
+	.col-md-4{
+		padding:40px;
+		img{
+			width:75px;
+			height: 75px;
+			border-radius:50%;
+		}
+		div{float: left}
+		div{
+			&:last-child{
+				p{
+					padding:0;
+					margin:0;
+				}
+				position:relative;
+				left:15px;
+				top:10px;
 			}
 		}
 	}
