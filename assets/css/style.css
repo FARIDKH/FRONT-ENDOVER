@@ -5873,7 +5873,8 @@ html, body {
   #header nav ul .firstinDrop, #header nav ul .secondinDrop, #header nav ul .thirdinDrop {
     background-color: #332F26;
     list-style-type: none;
-    box-shadow: 0px 0px 3px black; }
+    box-shadow: 0px 0px 3px black;
+    display: none; }
     #header nav ul .firstinDrop li, #header nav ul .secondinDrop li, #header nav ul .thirdinDrop li {
       position: relative;
       left: -20px;
@@ -6183,6 +6184,38 @@ html, body {
   100% {
     opacity: 1;
     transform: translateY(0px); } }
+@keyframes thirdSepAnim {
+  0% {
+    opacity: 0;
+    transform: translateY(-250px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0px); } }
+@keyframes clientAnim {
+  0% {
+    opacity: 0;
+    transform: translateY(-70px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0px); } }
+@keyframes oddLayout {
+  0% {
+    opacity: 0;
+    transform: translateY(-350px); }
+  85% {
+    transform: translateY(25px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0px); } }
+@keyframes evenLayout {
+  0% {
+    opacity: 0;
+    transform: translateY(350px); }
+  85% {
+    transform: translateY(-25px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0px); } }
 #loremAnims {
   overflow: hidden;
   padding-top: 10px; }
@@ -6365,7 +6398,8 @@ html, body {
   background-attachment: fixed;
   background-size: cover;
   color: white;
-  font-weight: 300; }
+  font-weight: 300;
+  animation-play-state: paused; }
   #thirdSeperator h1 {
     font-weight: 300;
     font-size: 50px;
@@ -6373,9 +6407,9 @@ html, body {
     #thirdSeperator h1 span {
       color: #1AC6FF; }
   #thirdSeperator .thirdSepSlider {
-    border: 1px solid darkgreen;
     overflow: hidden;
-    position: relative; }
+    position: relative;
+    animation: thirdSepAnim 1s 1; }
   #thirdSeperator .tss-1 {
     position: relative;
     left: -800px; }
@@ -6403,25 +6437,127 @@ html, body {
   border-bottom: 1px solid #1AC6FF; }
   .clientActive p, .clientActive span span {
     color: #1AC6FF; }
+  .clientActive img {
+    opacity: 1 !important; }
 
-#clients .col-md-9 {
-  position: relative;
-  left: 50px;
-  border-bottom: 1px solid gray; }
-#clients .col-md-4 {
-  padding: 40px; }
-  #clients .col-md-4 img {
-    width: 75px;
-    height: 75px;
-    border-radius: 50%; }
-  #clients .col-md-4 div {
-    float: left; }
-  #clients .col-md-4 div:last-child {
+#clients {
+  color: lightgray;
+  animation: clientAnim 1s 1;
+  animation-play-state: paused; }
+  #clients .col-md-9 {
     position: relative;
+    left: 50px;
+    border-bottom: 1px solid gray; }
+  #clients .col-md-4 {
+    cursor: pointer;
+    padding: 40px; }
+    #clients .col-md-4 img {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      opacity: 0.7; }
+    #clients .col-md-4 div {
+      float: left; }
+    #clients .col-md-4 div:last-child {
+      position: relative;
+      left: 15px;
+      top: 10px; }
+      #clients .col-md-4 div:last-child p {
+        padding: 0;
+        margin: 0; }
+    #clients .col-md-4:hover p, #clients .col-md-4:hover span span {
+      color: #1AC6FF; }
+    #clients .col-md-4:hover img {
+      opacity: 1 !important; }
+
+#infoUs {
+  padding: 60px 0; }
+  #infoUs h1 {
+    font-weight: 300; }
+    #infoUs h1 span {
+      color: #1AC6FF; }
+  #infoUs .infoMain p {
+    font-size: 1.1em; }
+
+#developers .col-md-3 {
+  overflow: hidden; }
+  #developers .col-md-3 span {
+    color: #1AC6FF;
+    display: block;
+    margin: 15px auto; }
+  #developers .col-md-3 span, #developers .col-md-3 h5 {
+    text-align: center; }
+  #developers .col-md-3 img {
+    position: relative; }
+  #developers .col-md-3 div:nth-child(2) {
+    width: 90%;
+    height: 263px;
+    overflow: hidden;
+    padding: 70px 0;
+    opacity: .7;
+    background-color: #1AC6FF;
+    position: absolute;
     left: 15px;
-    top: 10px; }
-    #clients .col-md-4 div:last-child p {
-      padding: 0;
-      margin: 0; }
+    top: 0;
+    color: white;
+    display: none; }
+    #developers .col-md-3 div:nth-child(2) ul li {
+      border: 1px solid white;
+      padding: 10px; }
+      #developers .col-md-3 div:nth-child(2) ul li:hover {
+        opacity: 1;
+        background-color: white;
+        color: #1AC6FF; }
+#developers .dev-1, #developers .dev-3 {
+  animation: oddLayout 1s 1;
+  animation-play-state: paused; }
+#developers .dev-2, #developers .dev-4 {
+  animation: evenLayout 1s 1;
+  animation-play-state: paused; }
+
+#lastSeperator {
+  background-color: #1AC6FF;
+  color: white;
+  padding: 20px 40px; }
+  #lastSeperator .container {
+    position: relative; }
+  #lastSeperator button {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    transition: all 0.1s linear; }
+    #lastSeperator button:hover {
+      background-color: white;
+      color: #1AC6FF; }
+
+#footer {
+  padding: 60px 0;
+  background: url("../images/background/low_poly_background.jpg") no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: white; }
+  #footer h2 {
+    font-weight: 300;
+    margin-bottom: 20px; }
+  #footer .col-md-5 i {
+    cursor: pointer;
+    color: transparent;
+    -webkit-text-stroke: 1px #1AC6FF;
+    margin-left: 45px;
+    margin-bottom: 15px; }
+    #footer .col-md-5 i:hover {
+      -webkit-text-stroke: 1px #0086b3; }
+  #footer .col-md-3 h4 {
+    text-align: center; }
+  #footer .col-md-3 span:nth-child(2) {
+    color: #1AC6FF; }
+  #footer .col-md-3 i {
+    font-size: 1.4em;
+    color: #1AC6FF;
+    margin: 7px 0; }
 
 /*# sourceMappingURL=style.css.map */

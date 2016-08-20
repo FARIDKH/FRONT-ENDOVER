@@ -98,7 +98,7 @@ html,body{
 					}
 				}
 				box-shadow:0px 0px 3px black;
-				// display:none;
+				display:none;
 			}
 			.firstinDrop{
 				position:absolute;
@@ -550,7 +550,57 @@ html,body{
 		transform:translateY(0px)
 	}
 }
+@keyframes thirdSepAnim{
+	0%{
+		opacity: 0;
+		transform:translateY(-250px)
+	}
+	100%{
+		opacity: 1;
+		transform:translateY(0px)
+	}
+}
 
+
+@keyframes clientAnim{
+	0%{
+		opacity: 0;
+		transform:translateY(-70px)
+	}
+	100%{
+		opacity: 1;
+		transform:translateY(0px)
+	}
+}
+
+@keyframes oddLayout{
+	0%{
+		opacity: 0;
+		transform:translateY(-350px)
+	}
+	85%{
+		transform:translateY(25px)
+	}
+	100%{
+		opacity: 1;
+		transform:translateY(0px)
+	}
+}
+
+
+@keyframes	evenLayout {
+	0%{
+		opacity: 0;
+		transform:translateY(350px)
+	}
+	85%{
+		transform:translateY(-25px)
+	}
+	100%{
+		opacity: 1;
+		transform:translateY(0px)
+	}
+}
 #loremAnims{
 	overflow:hidden;
 	.loremActive{
@@ -806,6 +856,7 @@ html,body{
 	background-size:cover;
 	color:white;
 	font-weight: 300;
+	animation-play-state:paused;
 	h1{
 		font-weight: 300;
 		font-size:50px;
@@ -815,9 +866,9 @@ html,body{
 		}
 	}
 	.thirdSepSlider{
-		border:1px solid darkgreen;
 		overflow:hidden;
 		position:relative;
+		animation:thirdSepAnim 1s 1;
 	}
 
 	.tss-1{
@@ -866,19 +917,27 @@ html,body{
 	p,span span{
 		color:$mainColor;
 	}
+	img{
+		opacity: 1 !important;
+	}
 }
-#clients{
+#clients{	
+	color:lightgray;
+	animation:clientAnim 1s 1;
+	animation-play-state:paused;
 	.col-md-9{
 		position:relative;
 		left:50px;
 		border-bottom:1px solid gray;
 	}
 	.col-md-4{
+		cursor:pointer;
 		padding:40px;
 		img{
 			width:75px;
 			height: 75px;
 			border-radius:50%;
+			opacity:0.7;
 		}
 		div{float: left}
 		div{
@@ -892,5 +951,142 @@ html,body{
 				top:10px;
 			}
 		}
+		&:hover{				
+			p,span span{
+				color:$mainColor;
+			}
+			img{
+				opacity: 1 !important;
+			}
+		}
 	}
 }
+
+
+#infoUs{
+	padding:60px 0;
+	h1{
+		font-weight: 300;
+		span{
+			color:$mainColor;
+		}
+	}
+	.infoMain{
+		p{
+			font-size:1.1em;
+		}
+	}
+}
+
+#developers{
+	.col-md-3{
+		overflow: hidden;	
+		span{
+			color:$mainColor;
+			display: block;
+			margin:15px auto;
+
+		}
+		span,h5{
+			text-align:center;
+		}
+		img{
+			position:relative;
+		}
+		div:nth-child(2){
+			width:90%;
+			height: 263px;
+			overflow:hidden;
+			padding:70px 0;
+			opacity: .7;
+			background-color:$mainColor;
+			position:absolute;
+			left:15px;
+			top:0;
+			color:white;
+			display:none;
+			ul li{
+				border:1px solid white;
+				padding:10px;
+				&:hover{
+					opacity: 1;
+					background-color:white;
+					color:$mainColor;
+				}
+			}
+		}
+	}
+	.dev-1 , .dev-3{
+		animation:oddLayout 1s 1;
+		animation-play-state:paused;
+	}
+	.dev-2 , .dev-4{
+		animation:evenLayout 1s 1;
+		animation-play-state:paused;
+	}
+}
+
+#lastSeperator{
+	.container{
+		position:relative;
+	}
+	background-color:$mainColor;
+	color:white;
+	padding:20px 40px;
+	button{
+		background-color:transparent;
+		border:1px solid white;
+		color:white;
+		position:absolute;
+		top:20px;
+		right:20px;
+		padding:10px 20px;
+		transition:all 0.1s linear;
+		&:hover{
+			background-color:white;
+			color:$mainColor;
+		}
+	}
+}
+
+#footer{
+	padding:60px 0;
+	background:url('../images/background/low_poly_background.jpg') no-repeat center;
+	background-size:cover;
+	background-attachment:fixed;
+	color:white;
+	h2{
+		font-weight: 300;
+		margin-bottom:20px;
+	}
+	.col-md-5{
+		i{
+			cursor:pointer;
+			color:transparent;
+			-webkit-text-stroke: 1px $mainColor;
+			margin-left:45px;
+			margin-bottom:15px;
+			&:hover{
+				-webkit-text-stroke: 1px $darkMainColor;
+			}
+		}
+	}
+	.col-md-3{
+		h4{
+			text-align:center;
+		}
+		span{
+			&:nth-child(2){
+			color:$mainColor;
+			}
+		}
+		i{
+			font-size:1.4em;
+			color:$mainColor;
+			margin:7px 0;
+		}
+	}
+}
+
+
+
